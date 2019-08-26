@@ -1,31 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="app">
+    <van-nav-bar title="长沙h5-1903" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <transition name="fly">
+       <router-view></router-view>
+    </transition>
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="home-o" to="/home">home</van-tabbar-item>
+      <van-tabbar-item icon="friends-o" to="/friends">friends</van-tabbar-item>
+      <van-tabbar-item icon="shopping-cart-o" to="/cart">cart</van-tabbar-item>
+      <van-tabbar-item icon="search" to="/search">search</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  data: () => ({
+    active: 0
+  }),
+  created () {},
+  methods: {
+    onClickLeft () {
+      console.log('left')
+    }
+  }
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+</script>
+<style lang="less" scoped>
+  .app{
+    overflow-x: hidden;
+    .fly-enter{
+      transform: translateX(100%);
+    }
+    .fly-leave-to{
+      transform: translateX(-100%);
+      position: absolute;
+      left: -300%;
+    }
+    .fly-enter-active,
+    .fly-leave-active{
+      transition:all .5s ease;
+    }
+  }
 </style>
