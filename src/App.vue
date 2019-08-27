@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <van-nav-bar title="长沙h5-1903" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar title="长沙h5-1903" left-text="返回" left-arrow @click-left="goBack" />
     <transition name="fly">
        <router-view></router-view>
     </transition>
@@ -19,8 +19,8 @@ export default {
   }),
   created () {},
   methods: {
-    onClickLeft () {
-      console.log('left')
+    goBack () {
+      this.$router.go(-1)
     }
   }
 }
@@ -28,6 +28,7 @@ export default {
 <style lang="less" scoped>
   .app{
     overflow-x: hidden;
+    padding-bottom: 50px;
     .fly-enter{
       transform: translateX(100%);
     }

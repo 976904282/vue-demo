@@ -6,7 +6,7 @@
       </van-swipe-item>
     </van-swipe>
 
-    <van-grid :column-num="3" class="mygrid">
+    <van-grid :column-num="3" class="mygrid" >
       <van-grid-item v-for="grid in grids" :key="grid.id" :text="grid.title" props="grid" :to="grid.to"  >
         <template slot="icon">
           <img :src="grid.src" alt="">

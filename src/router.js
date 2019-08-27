@@ -5,7 +5,9 @@ import Home from '@/views/home/home'
 import Friends from '@/views/friend/friends.vue'
 import Cart from '@/views/cart/cart.vue'
 import Search from '@/views/search/search.vue'
-import newslist from './views/home/list/newslist.vue'
+import newslist from '@/views/home/list/newslist.vue'
+import newsinfo from '@/views/home/list/newsinfo/newsinfo.vue'
+import photolist from '@/views/home/photolist/photolist.vue'
 
 Vue.use(Router)
 
@@ -30,6 +32,14 @@ export default new Router({
     {
       path: '/home/newslist',
       component: newslist
+    },
+    {
+      path: '/home/newsinfo/:id',
+      component: newsinfo
+    },
+    {
+      path: '/home/photolist',
+      component: photolist
     }
 
   ]

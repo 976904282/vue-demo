@@ -1,11 +1,13 @@
 <template>
   <div class="newslist">
-    <van-card v-for="item in newslist" :key="item.id" :title="item.title" :thumb="item.img_url">
+    <router-link v-for="item in newslist" :key="item.id" :to="'/home/newsinfo/'+item.id">
+      <van-card :title="item.title" :thumb="item.img_url">
       <div slot="price">
         <span class="add_time">发表时间:{{item.add_time}}</span>
       </div>
       <div slot="num">点击{{item.click}}次</div>
     </van-card>
+    </router-link>
   </div>
 </template>
 <script>
@@ -17,6 +19,7 @@ export default {
     this.getNewsList()
   },
   methods: {
+    // 获取新闻列表信息数据
     async getNewsList () {
       const {
         data: { message, status }
