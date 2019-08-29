@@ -7,7 +7,7 @@
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" to="/home">home</van-tabbar-item>
       <van-tabbar-item icon="friends-o" to="/friends">friends</van-tabbar-item>
-      <van-tabbar-item icon="shopping-cart-o" to="/cart">cart</van-tabbar-item>
+      <van-tabbar-item icon="shopping-cart-o" to="/cart" :info="$store.getters.getAllCount">cart</van-tabbar-item>
       <van-tabbar-item icon="search" to="/search">search</van-tabbar-item>
     </van-tabbar>
   </div>

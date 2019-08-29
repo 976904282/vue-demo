@@ -4,6 +4,7 @@ import router from './router'
 import './plugins/vant.js'
 import axios from 'axios'
 import moment from 'moment'
+import store from './store'
 
 // 全局配置axios
 axios.defaults.baseURL = 'http://localhost:5000/'
@@ -16,5 +17,6 @@ Vue.filter('datefmt', (str, arg2 = "'YYYY-MM-DD HH:mm:ss'") => {
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

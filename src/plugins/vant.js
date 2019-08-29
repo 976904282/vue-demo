@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import {
+  Stepper,
+  Panel,
+  ImagePreview,
   Lazyload,
   Tab, Tabs,
   Cell, CellGroup,
@@ -18,6 +21,9 @@ const options = {
 }
 
 Vue
+  .use(Stepper)
+  .use(Panel)
+  .use(ImagePreview)
   .use(Lazyload, options)
   .use(Tab).use(Tabs)
   .use(Cell).use(CellGroup)
@@ -31,3 +37,4 @@ Vue
   .use(Button)
 
 Vue.prototype.$Toast = Toast
+Vue.prototype.$ImagePreview = ImagePreview
