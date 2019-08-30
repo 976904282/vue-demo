@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import {
+  Switch,
+  SubmitBar,
   Stepper,
   Panel,
   ImagePreview,
@@ -21,6 +23,8 @@ const options = {
 }
 
 Vue
+  .use(Switch)
+  .use(SubmitBar)
   .use(Stepper)
   .use(Panel)
   .use(ImagePreview)

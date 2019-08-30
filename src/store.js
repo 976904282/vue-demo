@@ -15,8 +15,21 @@ export default new Store({
       state.cart.forEach(item => {
         c += item.count
       })
-      console.log(c)
+
       return c
+    },
+    getAllPrice (state) {
+      let o = {
+        cont: 0,
+        allPrice: 0
+      }
+      state.cart.forEach(item => {
+        if (item.selected === true) {
+          o.count += item.count
+          o.allPrice += item.count * item.sell_price
+        }
+      })
+      return o
     }
   },
   mutations: {
